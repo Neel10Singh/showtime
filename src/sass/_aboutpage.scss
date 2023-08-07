@@ -1,0 +1,149 @@
+@mixin flexbox($dir, $rg, $cg) {
+  display: flex;
+  flex-direction: $dir;
+  row-gap: $rg;
+  column-gap: $cg;
+}
+@mixin dimensions($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+.aboutpage {
+  @include flexbox(column, 5rem, 5rem);
+  @include dimensions(100%, fit-content);
+  padding: 2rem;
+  padding-top: 7rem;
+  justify-content: center;
+  align-items: center;
+}
+.topsection {
+  @include flexbox(row, 2rem, 2rem);
+  @include dimensions(100%, 65rem);
+  .imgandtitle {
+    @include dimensions(35%, 100%);
+    position: relative;
+
+    img {
+      @include dimensions(100%, 100%);
+      object-fit: cover;
+    }
+    .shadowbox {
+      z-index: 100;
+      @include dimensions(100%, 100%);
+      box-shadow: 1rem 1rem 3rem black inset, -1rem -5rem 3rem black inset;
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .title {
+    font-size: 5rem;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .rightsection {
+    @include flexbox(column, 2rem, 2rem);
+    width: 65%;
+    color: white;
+    .info {
+      @include flexbox(column, 1rem, 1rem);
+
+      .genres {
+        @include flexbox(row, 1rem, 1rem);
+        .genre {
+          font-size: 2rem;
+
+          background-image: linear-gradient(to right top, black, black, red);
+          font-weight: 500;
+          padding: 0.7rem;
+          border-radius: 2rem;
+        }
+      }
+    }
+    .summary {
+      font-size: 2rem;
+    }
+    .desc {
+      font-size: 1.5rem;
+      margin-bottom: -0.5rem;
+      text-align: end;
+      text-decoration: none !important;
+    }
+  }
+}
+.bookticket {
+  width: 70%;
+  @include flexbox(column, 2rem, 2rem);
+  .bookbutton {
+    padding: 0.6rem;
+    width: 20rem;
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    border-radius: 2rem;
+    background-color: rgb(183, 0, 0);
+    box-shadow: 1rem 1rem 3rem black inset, -1rem -1rem 3rem black inset;
+    transition: 0.3s;
+    &:hover {
+      box-shadow: 0rem 0rem 0rem inset black, 0rem 0rem 0rem inset black,
+        1rem 1rem 3rem black, -1rem -1rem 3rem black;
+      transition: 0.3s;
+    }
+  }
+  .bookformhidden {
+    display: none;
+  }
+
+  .bookform {
+    @include flexbox(column, 1rem, 1rem);
+    align-items: center;
+    border: 2px solid black;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 1rem 1rem 3rem black inset, -1rem -1rem 3rem black inset;
+    color: white;
+    font-size: 2.5rem;
+
+    input {
+      width: 50%;
+      height: 4rem;
+      font-size: 2rem;
+      border-radius: 1rem;
+      background-image: linear-gradient(to right, black, black, red);
+
+      box-shadow: 0.3rem 0.3rem 1rem black inset,
+        -0.3rem -0.3rem 1rem black inset;
+      color: white;
+      padding-left: 1rem;
+      border: none;
+    }
+    .formdets .input2 {
+      background-image: none;
+      background-color: transparent;
+      box-shadow: none;
+    }
+    .optionbuttons {
+      @include flexbox(row, 1rem, 1rem);
+      .optionbut {
+        padding: 0.5rem;
+        font-size: 2rem;
+        color: white;
+        background-color: rgb(179, 0, 0);
+        border: none;
+        border-radius: 1rem;
+        transition: 0.3s;
+        &:hover {
+          box-shadow: 0.3rem 0.3rem 1rem rgb(255, 79, 79) inset,
+            -0.3rem -0.3rem 1rem rgb(255, 87, 87) inset;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}
+.status {
+  color: white;
+  font-size: 2rem;
+}

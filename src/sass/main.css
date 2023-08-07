@@ -1,0 +1,322 @@
+.navbar {
+  position: fixed;
+  height: 5rem;
+  top: 0;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  font-size: 4rem;
+  font-weight: 700;
+  color: red;
+  z-index: 100;
+}
+
+.menupage {
+  display: flex;
+  flex-direction: row;
+  row-gap: 2rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 5rem;
+  padding-top: 7rem;
+}
+
+.showcard {
+  width: 20rem;
+  height: 30rem;
+  border: none;
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+.showcard img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  transition: 0.5s;
+}
+.showcard .showname {
+  position: absolute;
+  bottom: -10rem;
+  left: 0;
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  -moz-column-gap: fit-content;
+       column-gap: fit-content;
+  padding-top: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.427);
+  color: white;
+  z-index: 1;
+  transition: 0.5s;
+}
+.showcard .showname .showtitle {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.showcard .showname .showgenres {
+  display: flex;
+  flex-direction: row;
+  row-gap: 0.5rem;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  width: 100%;
+  flex-wrap: wrap;
+  font-size: 1.3rem;
+  padding: 0 1rem;
+}
+.showcard .showname .showgenres .showgenre {
+  background-color: rgb(192, 0, 0);
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+}
+.showcard:hover img {
+  width: 120%;
+  height: 120%;
+  margin-top: -10%;
+  margin-left: -10%;
+  transition: 0.5s;
+}
+.showcard:hover .showname {
+  bottom: 0;
+  transition: 0.8rem;
+}
+
+.aboutpage {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5rem;
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 2rem;
+  padding-top: 7rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.topsection {
+  display: flex;
+  flex-direction: row;
+  row-gap: 2rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  width: 100%;
+  height: 65rem;
+}
+.topsection .imgandtitle {
+  width: 35%;
+  height: 100%;
+  position: relative;
+}
+.topsection .imgandtitle img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.topsection .imgandtitle .shadowbox {
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  box-shadow: 1rem 1rem 3rem black inset, -1rem -5rem 3rem black inset;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.topsection .title {
+  font-size: 5rem;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.topsection .rightsection {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  width: 65%;
+  color: white;
+}
+.topsection .rightsection .info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.topsection .rightsection .info .genres {
+  display: flex;
+  flex-direction: row;
+  row-gap: 1rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.topsection .rightsection .info .genres .genre {
+  font-size: 2rem;
+  background-image: linear-gradient(to right top, black, black, red);
+  font-weight: 500;
+  padding: 0.7rem;
+  border-radius: 2rem;
+}
+.topsection .rightsection .summary {
+  font-size: 2rem;
+}
+.topsection .rightsection .desc {
+  font-size: 1.5rem;
+  margin-bottom: -0.5rem;
+  text-align: end;
+  text-decoration: none !important;
+}
+
+.bookticket {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+.bookticket .bookbutton {
+  padding: 0.6rem;
+  width: 20rem;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  border-radius: 2rem;
+  background-color: rgb(183, 0, 0);
+  box-shadow: 1rem 1rem 3rem black inset, -1rem -1rem 3rem black inset;
+  transition: 0.3s;
+}
+.bookticket .bookbutton:hover {
+  box-shadow: 0rem 0rem 0rem inset black, 0rem 0rem 0rem inset black, 1rem 1rem 3rem black, -1rem -1rem 3rem black;
+  transition: 0.3s;
+}
+.bookticket .bookformhidden {
+  display: none;
+}
+.bookticket .bookform {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  align-items: center;
+  border: 2px solid black;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 1rem 1rem 3rem black inset, -1rem -1rem 3rem black inset;
+  color: white;
+  font-size: 2.5rem;
+}
+.bookticket .bookform input {
+  width: 50%;
+  height: 4rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(to right, black, black, red);
+  box-shadow: 0.3rem 0.3rem 1rem black inset, -0.3rem -0.3rem 1rem black inset;
+  color: white;
+  padding-left: 1rem;
+  border: none;
+}
+.bookticket .bookform .formdets .input2 {
+  background-image: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+.bookticket .bookform .optionbuttons {
+  display: flex;
+  flex-direction: row;
+  row-gap: 1rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.bookticket .bookform .optionbuttons .optionbut {
+  padding: 0.5rem;
+  font-size: 2rem;
+  color: white;
+  background-color: rgb(179, 0, 0);
+  border: none;
+  border-radius: 1rem;
+  transition: 0.3s;
+}
+.bookticket .bookform .optionbuttons .optionbut:hover {
+  box-shadow: 0.3rem 0.3rem 1rem rgb(255, 79, 79) inset, -0.3rem -0.3rem 1rem rgb(255, 87, 87) inset;
+  transition: 0.3s;
+}
+
+.status {
+  color: white;
+  font-size: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Kanit", sans-serif;
+  background-image: linear-gradient(to right, red, black, black);
+}
+
+button {
+  cursor: pointer;
+  font-family: "Kanit", sans-serif;
+}
+
+a {
+  color: white;
+}
+
+@media (min-width: 500px) and (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+  .topsection {
+    flex-direction: column;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .topsection .imgandtitle {
+    width: 100%;
+  }
+  .topsection .rightsection {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  html {
+    font-size: 37.5%;
+  }
+  .menupage {
+    padding: 3rem;
+    padding-top: 7rem;
+  }
+  .topsection {
+    flex-direction: column;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .topsection .imgandtitle {
+    width: 100%;
+  }
+  .topsection .rightsection {
+    width: 100%;
+  }
+}/*# sourceMappingURL=main.css.map */

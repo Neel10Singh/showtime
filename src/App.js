@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './sass/main.css'
+import './App.css'
+import MenuPage from './components/MenuPage'
+import 'font-awesome/css/font-awesome.min.css'
+import { useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import AboutShow from './components/AboutShow'
+import Navbar from './components/Navbar'
 
 function App() {
+  const [data, setData] = useState(null)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<MenuPage data={data} setData={setData} />} />
+        <Route path='/show/:id' element={<AboutShow data={data} />} />
+      </Routes>
+    </>
+  )
 }
 
-export default App;
+export default App

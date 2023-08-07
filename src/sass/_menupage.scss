@@ -1,0 +1,86 @@
+@mixin flexbox($dir, $rg, $cg) {
+  display: flex;
+  flex-direction: $dir;
+  row-gap: $rg;
+  column-gap: $cg;
+}
+@mixin dimensions($w, $h) {
+  width: $w;
+  height: $h;
+}
+.navbar {
+  position: fixed;
+  height: 5rem;
+  top: 0;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  font-size: 4rem;
+  font-weight: 700;
+  color: red;
+  z-index: 100;
+}
+.menupage {
+  @include flexbox(row, 2rem, 2rem);
+
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 5rem;
+  padding-top: 7rem;
+}
+.showcard {
+  @include dimensions(20rem, 30rem);
+  border: none;
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    transition: 0.5s;
+  }
+  .showname {
+    position: absolute;
+    bottom: -10rem;
+    left: 0;
+    @include dimensions(100%, 10rem);
+    @include flexbox(column, 0.5rem, fit-content);
+    padding-top: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.427);
+    color: white;
+
+    z-index: 1;
+    transition: 0.5s;
+    .showtitle {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .showgenres {
+      @include flexbox(row, 0.5rem, 0.5rem);
+      width: 100%;
+      flex-wrap: wrap;
+      font-size: 1.3rem;
+      padding: 0 1rem;
+      .showgenre {
+        background-color: rgb(192, 0, 0);
+        color: white;
+        border-radius: 0.5rem;
+        padding: 0.3rem;
+      }
+    }
+  }
+  &:hover {
+    img {
+      width: 120%;
+      height: 120%;
+      margin-top: -10%;
+      margin-left: -10%;
+      transition: 0.5s;
+    }
+    .showname {
+      bottom: 0;
+      transition: 0.8rem;
+    }
+  }
+}
